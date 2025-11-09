@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎯 Jherilyn Fortes - Comprehensive Professional Portfolio
 
 ## 📋 Week 9 Deliverable: Integrated Professional Portfolio
@@ -260,3 +261,7 @@ MIT License - See [LICENSE](LICENSE) file for details.
 **Academic Year**: 2024-2025  
 
 *This comprehensive portfolio demonstrates technical proficiency, creative problem-solving, and professional presentation skills developed through intensive project-based learning.*
+=======
+# ai-cv-website
+Professional CV website built with AI-generated components using v0.dev, Next.js 15, and Shadcn UI
+>>>>>>> 48afe5b6a205b8d0ca1954efcd0285d4f1bb4757
