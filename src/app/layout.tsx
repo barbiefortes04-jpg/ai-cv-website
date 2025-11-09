@@ -6,9 +6,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Professional CV - Your Name",
-  description: "AI-Generated Professional CV Website showcasing skills, experience, and projects",
-  keywords: ["CV", "Portfolio", "Web Developer", "Professional"],
+  title: "Jherilyn Fortes - Computer Science Student Portfolio",
+  description: "Professional CV website of Jherilyn Fortes, Computer Science student at St. Paul University Philippines, showcasing academic projects, skills, and experiences",
+  keywords: ["Jherilyn Fortes", "Computer Science", "Student Portfolio", "St. Paul University Philippines", "Web Developer", "Programming"],
   icons: {
     icon: "/favicon.svg",
   },

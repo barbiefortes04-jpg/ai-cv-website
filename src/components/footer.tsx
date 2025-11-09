@@ -1,82 +1,167 @@
 "use client"
 
-import { Github, Linkedin, Mail, Heart } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const router = useRouter()
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+    }
+  }
+
+  const navigateToPage = (path: string) => {
+    router.push(path)
+  }
 
   return (
-    <footer className="bg-muted/30 py-12">
+    <footer className="py-12 border-t" style={{backgroundColor: '#2a1b22', borderColor: 'rgba(139, 115, 85, 0.4)'}}>
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
             {/* Brand */}
             <div>
-              <h3 className="text-xl font-bold mb-4">Your Name</h3>
-              <p className="text-muted-foreground mb-4">
-                Full Stack Developer passionate about creating innovative solutions 
-                with modern technologies.
+              <h3 className="text-xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#8B7355] to-[#C4ACA8]">Jherilyn Fortes</h3>
+              <p className="mb-4" style={{color: '#FFFFFF'}}>
+                Computer Science student at St. Paul University Philippines, 
+                passionate about creating innovative web solutions with modern technologies.
               </p>
               <div className="flex space-x-4">
                 <a 
-                  href="https://github.com/yourusername" 
+                  href="https://github.com/barbiefortes04-jpg" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="transition-colors hover:scale-110 duration-300"
+                  style={{color: '#8B7355'}}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#8B7355'}
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/yourusername" 
+                  href="https://linkedin.com/in/barbiefortes04-jpg" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  className="transition-colors hover:scale-110 duration-300"
+                  style={{color: '#8B7355'}}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#8B7355'}
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a 
-                  href="mailto:your.email@example.com"
-                  className="text-muted-foreground hover:text-primary transition-colors"
+                  href="mailto:jherilyn.fortes@student.spup.edu.ph"
+                  className="transition-colors hover:scale-110 duration-300"
+                  style={{color: '#8B7355'}}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#8B7355'}
                 >
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
             </div>
             
-            {/* Quick Links */}
+            {/* Portfolio Pages */}
             <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <h4 className="font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#8B7355] to-[#C4ACA8]">Portfolio</h4>
               <ul className="space-y-2">
                 <li>
                   <button 
-                    onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    About
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
-                    className="text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Experience
-                  </button>
-                </li>
-                <li>
-                  <button 
-                    onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => navigateToPage('/projects')}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
                   >
                     Projects
                   </button>
                 </li>
                 <li>
                   <button 
-                    onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    onClick={() => navigateToPage('/demo')}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
                   >
-                    Contact
+                    Interactive Demos
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToPage('/mcp-integration')}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  >
+                    MCP Integration
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToPage('/github')}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  >
+                    GitHub Repos
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#8B7355] to-[#C4ACA8]">Quick Links</h4>
+              <ul className="space-y-2">
+                <li>
+                  <button 
+                    onClick={() => scrollToSection("about")}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  >
+                    About
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection("experience")}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  >
+                    Experience
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => scrollToSection("skills")}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  >
+                    Skills
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => navigateToPage('/professional')}
+                    className="transition-colors hover:translate-x-1 duration-300"
+                    style={{color: '#C4ACA8'}}
+                    onMouseEnter={(e) => e.currentTarget.style.color = '#8B7355'}
+                    onMouseLeave={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  >
+                    Branding
                   </button>
                 </li>
               </ul>
@@ -84,26 +169,33 @@ export function Footer() {
             
             {/* Contact Info */}
             <div>
-              <h4 className="font-semibold mb-4">Get In Touch</h4>
+              <h4 className="font-semibold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#8B7355] to-[#C4ACA8]">Get In Touch</h4>
               <div className="space-y-2">
-                <p className="text-muted-foreground text-sm">
-                  your.email@example.com
+                <p className="text-sm" style={{color: '#C4ACA8'}}>
+                  jherilyn.fortes@student.spup.edu.ph
                 </p>
-                <p className="text-muted-foreground text-sm">
-                  +1 (555) 123-4567
+                <p className="text-sm" style={{color: '#C4ACA8'}}>
+                  Philippines
                 </p>
-                <p className="text-muted-foreground text-sm">
-                  City, State, Country
-                </p>
+                <button 
+                  onClick={() => scrollToSection("contact")}
+                  className="text-sm transition-colors hover:underline"
+                  style={{color: '#8B7355'}}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#C4ACA8'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#8B7355'}
+                >
+                  Contact Form
+                </button>
               </div>
             </div>
           </div>
           
-          <div className="border-t border-border pt-6 text-center">
-            <p className="text-muted-foreground text-sm flex items-center justify-center space-x-1">
-              <span>© {currentYear} Your Name. Built with</span>
-              <Heart className="w-4 h-4 text-red-500" />
-              <span>using Next.js & Shadcn UI</span>
+          <div className="border-t pt-6 text-center" style={{borderColor: 'rgba(139, 115, 85, 0.4)'}}>
+            <p className="text-sm flex items-center justify-center space-x-1" style={{color: '#8B7355'}}>
+              <span>© {currentYear} Jherilyn Fortes. Comprehensive Professional Portfolio with MCP Integration</span>
+            </p>
+            <p className="text-xs mt-2" style={{color: '#C4ACA8'}}>
+              Built with Next.js 15, React 18, TypeScript & Tailwind CSS | Performance Optimized | Accessibility Compliant
             </p>
           </div>
         </div>
