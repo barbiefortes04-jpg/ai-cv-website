@@ -1,0 +1,4 @@
+tools:
+    - semgrep@1.78.0
+- pylint@3.3.6
+    - revive@1.7.0
