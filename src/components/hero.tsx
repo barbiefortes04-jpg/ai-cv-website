@@ -1,3 +1,5 @@
+"use client"
+
 import { Github, Linkedin, Mail, Download } from "lucide-react"
 
 export function Hero() {
